@@ -1,8 +1,9 @@
 import json
 import matplotlib.pyplot as plt
 
+
 # Carregando a string "JSON" para o programa:
-with open('https://github.com/rodrigomoreira777/estagio_pesquisa_clinica/blob/main/vaga_pesquisa_clinica/dados/dataset.json', 'r') as arquivo:
+with open('C:/Users/Rodrigo/PycharmProjects/vaga_pesquisa_clinica/dados/dataset.json', 'r') as arquivo:
     conteudo = arquivo.read()
 # string carregada.
 
@@ -39,8 +40,8 @@ for i in range(0, len(data), 1):
     plt.axvline(x=melhor_peep, color='b', ls='-.', ymax=0.9)
 
     plt.text(melhor_peep + 1.8, 101, 'Melhor PEEP', fontsize=14, color='b', weight='bold')
-    # plt.figure(figsize=(6.4, 4.8))
-    plt.savefig('https://github.com/rodrigomoreira777/estagio_pesquisa_clinica/tree/main/vaga_pesquisa_clinica/dados/graficos' + data[i].get('Patient ID') + '.png')
+    plt.rcParams["figure.figsize"] = (6.4, 4.8)
+    plt.savefig('C:/Users/Rodrigo/PycharmProjects/vaga_pesquisa_clinica/graficos/' + data[i].get('Patient ID') + '.png')
     plt.show()
     hyp.clear()
     peep.clear()
